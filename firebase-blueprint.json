@@ -1,0 +1,89 @@
+{
+  "schema": {
+    "products": {
+      "type": "collection",
+      "fields": {
+        "name": { "type": "string" },
+        "description": { "type": "string", "optional": true },
+        "price": { "type": "number" },
+        "active": { "type": "boolean" },
+        "image": { "type": "string", "optional": true },
+        "ingredients": { "type": "array", "optional": true }
+      }
+    },
+    "inventory": {
+      "type": "collection",
+      "fields": {
+        "name": { "type": "string" },
+        "stock": { "type": "number" }
+      }
+    },
+    "staff": {
+      "type": "collection",
+      "fields": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "active": { "type": "boolean" },
+        "password": { "type": "string", "optional": true }
+      }
+    },
+    "orders": {
+      "type": "collection",
+      "fields": {
+        "status": { "type": "string" },
+        "total": { "type": "number" },
+        "subtotal": { "type": "number", "optional": true },
+        "shipping": { "type": "number", "optional": true },
+        "items": { "type": "array" },
+        "address": { "type": "string" },
+        "date": { "type": "string" },
+        "rating": { "type": "number", "optional": true },
+        "clientPhone": { "type": "string", "optional": true },
+        "client": { "type": "string", "optional": true },
+        "pointsEarned": { "type": "number", "optional": true },
+        "time": { "type": "string", "optional": true }
+      }
+    },
+    "ingredients": {
+      "type": "collection",
+      "fields": {
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "stock": { "type": "number", "optional": true }
+      }
+    },
+    "settings": {
+      "type": "collection",
+      "fields": {
+        "openTime": { "type": "string" },
+        "closeTime": { "type": "string" },
+        "isOpen": { "type": "boolean", "optional": true },
+        "shippingRate": { "type": "number" }
+      }
+    },
+    "clients": {
+      "type": "collection",
+      "fields": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "optional": true },
+        "address": { "type": "string", "optional": true },
+        "ordersCount": { "type": "number", "optional": true },
+        "totalSpent": { "type": "number", "optional": true },
+        "points": { "type": "number", "optional": true },
+        "lastOrderDate": { "type": "string", "optional": true }
+      }
+    }
+  },
+  "security": {
+    "products": { "read": "true", "write": "true" },
+    "inventory": { "read": "true", "write": "true" },
+    "staff": { "read": "true", "write": "true" },
+    "orders": { "read": "true", "write": "true" },
+    "ingredients": { "read": "true", "write": "true" },
+    "settings": { "read": "true", "write": "true" },
+    "clients": { "read": "true", "write": "true" }
+  }
+}
